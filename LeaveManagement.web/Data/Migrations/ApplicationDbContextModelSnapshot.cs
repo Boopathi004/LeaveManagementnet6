@@ -124,15 +124,12 @@ namespace LeaveManagement.web.Data.Migrations
                     b.Property<int>("LeaveTypeId")
                         .HasColumnType("int");
 
-                    b.Property<int>("LeaveTypeid")
-                        .HasColumnType("int");
-
                     b.Property<int>("NumberofDays")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("LeaveTypeid");
+                    b.HasIndex("LeaveTypeId");
 
                     b.ToTable("LeaveAllocations");
                 });
@@ -304,7 +301,7 @@ namespace LeaveManagement.web.Data.Migrations
                 {
                     b.HasOne("LeaveManagement.web.Data.LeaveType", "LeaveType")
                         .WithMany()
-                        .HasForeignKey("LeaveTypeid")
+                        .HasForeignKey("LeaveTypeId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
